@@ -29,3 +29,7 @@ def post_detail(request, slug):
   else:
       comment_form = None
   return render(request, "blog/post-detail.html", {"post": post, "comment_form":comment_form})
+
+  def get_ip(request):
+    from django.http import HttResponse
+    return HttpResponse(request.META['REMOTE_ADDR'])
